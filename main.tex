@@ -1,7 +1,10 @@
-\documentclass[a4paper,12pt]{book}
+\documentclass[a4paper,12pt,oneside]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{tcolorbox}
+
+% Redefine "Part" to "Section"
+\renewcommand{\partname}{Section}
 
 \begin{document}
 
@@ -12,9 +15,10 @@
 \frontmatter
 \maketitle
 \tableofcontents
+\include{./TeX_files/foreword}
 
 \mainmatter
-\include{./TeX_files/foreword}
+\include{./TeX_files/section_1}
 
 \backmatter
 % bibliography, glossary and index would go here.

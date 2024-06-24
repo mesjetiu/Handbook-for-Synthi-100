@@ -5,9 +5,14 @@
 \usepackage{tcolorbox}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
+\usepackage{accsupp} % Paquete para agregar comentarios invisibles
 \usepackage{caption}
-% Redefine \caption to handle empty captions
 \usepackage{etoolbox}
+
+% Redefine "Part" to "Section"
+\renewcommand{\chaptername}{Section}
+
+% Redefine \caption to handle empty captions
 \makeatletter
 \patchcmd{\@makecaption}
 {\ifx\@captype\@undefined\@latex@error{No \noexpand\@captype for \noexpand\caption}\@ehd}
@@ -16,9 +21,6 @@
 {}
 {}
 \makeatother
-
-% Redefine "Part" to "Section"
-\renewcommand{\chaptername}{Section}
 
 \begin{document}
 

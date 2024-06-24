@@ -1,9 +1,21 @@
 \documentclass[a4paper,12pt,oneside]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{tcolorbox}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
+\usepackage{caption}
+% Redefine \caption to handle empty captions
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@makecaption}
+{\ifx\@captype\@undefined\@latex@error{No \noexpand\@captype for \noexpand\caption}\@ehd}
+{\ifx\@captype\@undefined\@latex@error{No \noexpand\@captype for \noexpand\caption}\@ehd\else
+	\ifx\@empty#2\@empty \relax \else \caption@OriMake#1{#2}\fi}
+{}
+{}
+\makeatother
 
 % Redefine "Part" to "Section"
 \renewcommand{\chaptername}{Section}

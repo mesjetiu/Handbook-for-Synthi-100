@@ -23,23 +23,28 @@
 {}
 \makeatother
 
+% Continuous figure numbering
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter} % This makes the figure counter not reset per chapter
+
 \begin{document}
-
-% \author{TeXstudio Team}
-\title{Handbook of Synthi 100}
-\date{}
-
-\frontmatter
-\maketitle
-\tableofcontents
-\listoffigures
-\include{./TeX_files/notas_edicion}
-\include{./TeX_files/foreword}
-
-\mainmatter
-\include{./TeX_files/section_1}
-
-\backmatter
-% bibliography, glossary and index would go here.
-
+	
+	% \author{TeXstudio Team}
+	\title{Handbook of Synthi 100}
+	\date{}
+	
+	\frontmatter
+	\maketitle
+	\tableofcontents
+	\listoffigures
+	\include{./TeX_files/notas_edicion}
+	\include{./TeX_files/foreword}
+	
+	\mainmatter
+	\include{./TeX_files/section_1}
+	\include{./TeX_files/section_2}
+	
+	\backmatter
+	% bibliography, glossary and index would go here.
+	
 \end{document}

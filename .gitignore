@@ -6,3 +6,5 @@ main.pdf
 *.lof
 *.out
 *.upa
+*.fdb_latexmk
+*.fls

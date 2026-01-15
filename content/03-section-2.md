@@ -15,9 +15,9 @@ Of the twelve oscillators in the S.100 (apart from the eight Filter/Oscillators)
 
 **Output 2**: Sawtooth Ramp + Pulse, with Pulse mark–sweep variable.
 
-These 12 identical oscillators have two in-phase outputs with shapes and phase relationship as shown in Figure \ref{fig:figure_3_shape_control}. Find these outputs on the Signal Board and the control inputs on the Control Board.
+These 12 identical oscillators have two in-phase outputs with shapes and phase relationship as shown in the figure below. Find these outputs on the Signal Board and the control inputs on the Control Board.
 
-![Shape Control and Effect on Output Signals](Figures/figure_3_shape_control.png)
+![Shape Control and Effect on Output Signals](Figures/figure_3_shape_control.png){#fig:figure_3_shape_control}
 
 With the small synthesizers, the amount of timbre control possible without using filters is limited by the fact that two oscillators can never be tuned so that they are locked in phase, and beats will always occur. Try now putting Oscs. 1 and 2 sines to output, and Osc. 1 ramp to synch. input 2. For the moment keep Osc. 1 ramp level at zero, and tune the two oscillators an octave apart, Osc. 2 being the higher. Monitor both on $Y_{1}$ (two pins); however carefully you tune, the picture will slowly drift as the relative phase changes, and slow beats will occur. Now bring up the ramp output of Osc. 1; at a certain point the waveform (and the sound) will lock, and there will be the illusion of one sound source instead of two (particularly if Osc. 2 sine level is set somewhat lower than Osc. 1, to simulate a 'natural' second harmonic). This facility enables timbres to be constructed additively, by adding sines to build the desired harmonic structure. There is no reason why you cannot use ramps as well, but the harmonic structure is more difficult to predict (but see below).
 

@@ -1,7 +1,18 @@
----
 lang: en
 ---
 
 # Foreword {.unnumbered}
 
-*Aquí irá el foreword migrado de `TeX_files/foreword.tex`*
+Synthi 100 is only made in very small quantities, and because every aspect of its design is under constant review with an eye to improvement, each example of the machine is slightly different. This makes it impracticable to produce a definitive, once-for-all handbook, and for some time there has been no handbook at all, since we are aware that purchasers of this instrument are in the main already experienced in the use of voltage controlled equipment and the general techniques of electronic music, and in most cases will have had extensive demonstrations before taking delivery. At the same time we have been conscious that some users have simply not grasped the possibilities at their command and have seriously under-rated and underused the capabilities which S.100 offers, partly because there is no other synthesizer with which to compare it. Apart from possessing a number of devices unique to EMS, the digital sequencer gives S.100 a degree of user control which can only be rivalled by fully computerised studios at many times the cost.
+
+Because of the almost limitless possibilities of the studio, it is not easy to attempt a survey of its capabilities, and the following pages should be regarded as an "intelligent user's guide". We expect each owner to add his own notes and comments, individual calibrations of particular interest, etc. To take a particular example, the eight voltage controlled filters have always been built to an exacting specification, but because our research and development department considered there was room for improvement the circuitry has been slightly modified almost with each example manufactured. The settings and procedures given in this book may therefore not precisely apply to a given machine, but the method of taking response curves etc., is still valid and useful in all cases.
+
+If in doubt about a particular device, look it up in the contents list and read the typical uses given, but regard this as a starting point rather than a complete survey of possibilities; the great strength of voltage control lies in the enormous variety of inter-dependencies available, and in S.100 these are so numerous that no handbook can begin to cover them.
+
+We have divided the descriptions of the devices into groups of similar general purpose, such as Source or Treatment, Digital or Analogue, but some devices have several applications and therefore appear in more than one section.
+
+If you consider that the presentation or contents of this handbook are not satisfactory, we would be pleased to know about this, and the purpose of the loose leaf method of binding is to make it possible to amend and add material easily. No doubt you will also wish to exchange views and ideas with other S.100 owners, and to this end we include a list of purchasers up to the time of issue of this copy - though we cannot of course guarantee that some of these machines have not changed hands.
+
+::: warning title="VERY IMPORTANT"
+In earlier S.100 design, patch pins of 2K7 or shorting pins were often used. The patching system now employs virtual-earth summing nodes and 100K (white) pins are standard. A shorting pin is **never** used, since this would connect a high-current source directly to the summing node. Apart from gross distortion, damage may result to the input. Red (2K7) pins are used only for oscilloscope patching.
+:::

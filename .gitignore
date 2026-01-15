@@ -1,6 +1,6 @@
 *.aux
 *.log
-main.pdf
+*.pdf
 *.synctex.gz
 *.toc
 *.lof
@@ -8,3 +8,4 @@ main.pdf
 *.upa
 *.fdb_latexmk
 *.fls
+handbook.html

@@ -1,11 +1,32 @@
+# LaTeX archivos auxiliares
 *.aux
 *.log
-*.pdf
 *.synctex.gz
 *.toc
 *.lof
+*.lot
 *.out
 *.upa
 *.fdb_latexmk
 *.fls
-handbook.html
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+*.bcf
+*.run.xml
+
+# Builds generados
+*.pdf
+*.html
+*.epub
+*.docx
+
+# Archivos temporales
+*.bak
+*~
+.DS_Store

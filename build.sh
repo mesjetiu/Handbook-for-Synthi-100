@@ -20,6 +20,7 @@ echo "Generando $OUTPUT..."
 pandoc "$METADATA" $SOURCES \
     --template="$TEMPLATE" \
     --lua-filter="$FILTER" \
+    --resource-path=content \
     --pdf-engine=pdflatex \
     --top-level-division=chapter \
     -o "$OUTPUT"

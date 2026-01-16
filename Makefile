@@ -18,6 +18,7 @@ $(OUTPUT): $(SOURCES) $(METADATA) $(TEMPLATE) $(FILTER)
 	pandoc $(METADATA) $(SOURCES) \
 		--template=$(TEMPLATE) \
 		--lua-filter=$(FILTER) \
+		--resource-path=content \
 		--pdf-engine=pdflatex \
 		--top-level-division=chapter \
 		-o $@
@@ -27,6 +28,7 @@ $(OUTPUT): $(SOURCES) $(METADATA) $(TEMPLATE) $(FILTER)
 quick:
 	pandoc $(METADATA) $(SOURCES) \
 		--template=$(TEMPLATE) \
+		--resource-path=content \
 		--pdf-engine=pdflatex \
 		--top-level-division=chapter \
 		-o $(OUTPUT)
@@ -35,6 +37,7 @@ quick:
 html:
 	pandoc $(METADATA) $(SOURCES) \
 		--lua-filter=$(FILTER) \
+		--resource-path=content \
 		--standalone \
 		-o handbook.html
 

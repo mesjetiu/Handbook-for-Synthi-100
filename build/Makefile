@@ -69,13 +69,32 @@ $(DOCS_DIR)/Figures: $(CONTENT_DIR)/Figures
 # ============================================
 md: $(OUTPUT_DIR)/handbook-full.md
 
+# Genera TOC extrayendo headers del contenido
 $(OUTPUT_DIR)/handbook-full.md: $(SOURCES) $(METADATA) | $(OUTPUT_DIR)
-	pandoc $(METADATA) $(SOURCES) \
+	@printf '%s\n\n' "# Handbook of Synthi 100" > $@
+	@printf '%s\n\n' "**EMS (Electronic Music Studios)**" >> $@
+	@printf '%s\n\n' "---" >> $@
+	@printf '%s\n\n' "## Table of Contents" >> $@
+	@for f in $(SOURCES); do \
+		grep -E '^#{1,2} ' "$$f" 2>/dev/null; \
+	done | sed 's/ *{[^}]*}$$//' | while read -r line; do \
+		if echo "$$line" | grep -q '^# '; then \
+			title=$$(echo "$$line" | sed 's/^# //'); \
+			anchor=$$(echo "$$title" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g; s/[–—]/-/g; s/[,:]//g'); \
+			echo "- [$$title](#$$anchor)"; \
+		elif echo "$$line" | grep -q '^## '; then \
+			title=$$(echo "$$line" | sed 's/^## //'); \
+			anchor=$$(echo "$$title" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g; s/[–—]/-/g; s/[,:]//g'); \
+			echo "  - [$$title](#$$anchor)"; \
+		fi; \
+	done >> $@
+	@printf '\n%s\n\n' "---" >> $@
+	@pandoc $(METADATA) $(SOURCES) \
 		--resource-path=$(CONTENT_DIR) \
 		--to=gfm \
 		--wrap=none \
 		--strip-comments \
-		-o $@
+		>> $@
 	@echo "✓ Markdown generado: $@"
 
 # ============================================

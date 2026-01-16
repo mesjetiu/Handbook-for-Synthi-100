@@ -29,6 +29,4 @@ When you get to Oscs. 5 and 6, you may choose various configurations from harmon
 
 Look at Fig. 4(b). This shows an alternative timbre structure using a sawtooth output on the second harmonic (change synch. also if you are using State 2). The waveform itself now contributes to the timbre (coming up on even harmonics of the fundamental), and the sound will be richer, but buzzy at the top. Remove some of the upper harmonics by putting the whole complex through the Eight Octave Filter Bank (q.v.). Set all the lower controls of the Filter Bank at No. 10, and slope off to 0 at the highest octave.
 
-<!– TODO: cada vez que aparezca "q.v." (quod videt) poner referencia. Es como "véase". –>
-
 This method of timbre construction can give extremely rich organ-like tones, and you can experiment with emphasising certain harmonics. You can also, of course, try different series altogether, but you will not achieve lock unless the relationships are fairly simple.

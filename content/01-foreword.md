@@ -1,3 +1,4 @@
+---
 lang: en
 ---
 
@@ -13,6 +14,6 @@ We have divided the descriptions of the devices into groups of similar general p
 
 If you consider that the presentation or contents of this handbook are not satisfactory, we would be pleased to know about this, and the purpose of the loose leaf method of binding is to make it possible to amend and add material easily. No doubt you will also wish to exchange views and ideas with other S.100 owners, and to this end we include a list of purchasers up to the time of issue of this copy - though we cannot of course guarantee that some of these machines have not changed hands.
 
-::: warning title="VERY IMPORTANT"
+::: {.warning title="VERY IMPORTANT"}
 In earlier S.100 design, patch pins of 2K7 or shorting pins were often used. The patching system now employs virtual-earth summing nodes and 100K (white) pins are standard. A shorting pin is **never** used, since this would connect a high-current source directly to the summing node. Apart from gross distortion, damage may result to the input. Red (2K7) pins are used only for oscilloscope patching.
 :::

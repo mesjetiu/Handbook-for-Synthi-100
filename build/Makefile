@@ -3,6 +3,7 @@
 #
 # Targets:
 #   make pdf    - Genera PDF de alta calidad (LaTeX)
+#   make epub   - Genera EPUB para e-readers
 #   make web    - Genera sitio web en docs/ (GitHub Pages)
 #   make md     - Genera Markdown limpio/compacto
 #   make all    - Genera todo
@@ -19,9 +20,9 @@ CSS = templates/web.css
 SOURCES = $(sort $(wildcard $(CONTENT_DIR)/*.md))
 METADATA = $(CONTENT_DIR)/metadata.yaml
 
-.PHONY: all pdf web md clean
+.PHONY: all pdf epub web md clean
 
-all: pdf web md
+all: pdf epub web md
 
 # ============================================
 # PDF - Alta calidad con LaTeX
@@ -37,6 +38,29 @@ $(OUTPUT_DIR)/handbook.pdf: $(SOURCES) $(METADATA) $(TEMPLATE) $(FILTER) | $(OUT
 		--top-level-division=chapter \
 		-o $@
 	@echo "✓ PDF generado: $@"
+
+# ============================================
+# EPUB - Para e-readers
+# ============================================
+epub: $(OUTPUT_DIR)/handbook.epub
+
+$(OUTPUT_DIR)/handbook.epub: $(SOURCES) $(METADATA) $(CSS) | $(OUTPUT_DIR)
+	pandoc $(METADATA) $(SOURCES) \
+		--lua-filter=$(FILTER) \
+		--resource-path=$(CONTENT_DIR) \
+		--toc \
+		--toc-depth=2 \
+		--css=$(CSS) \
+		--epub-cover-image=$(CONTENT_DIR)/Figures/cover.png \
+		-o $@ 2>/dev/null || \
+	pandoc $(METADATA) $(SOURCES) \
+		--lua-filter=$(FILTER) \
+		--resource-path=$(CONTENT_DIR) \
+		--toc \
+		--toc-depth=2 \
+		--css=$(CSS) \
+		-o $@
+	@echo "✓ EPUB generado: $@"
 
 # ============================================
 # WEB - HTML para GitHub Pages (en docs/)
@@ -65,12 +89,14 @@ $(DOCS_DIR)/Figures: $(CONTENT_DIR)/Figures
 	@echo "✓ Figuras copiadas a docs/"
 
 # ============================================
-# MD - Markdown limpio/compacto
+# MD - Markdown limpio/compacto (autocontenido)
 # ============================================
-md: $(OUTPUT_DIR)/handbook-full.md
+MD_DIR = $(OUTPUT_DIR)/handbook-md
 
-# Genera TOC extrayendo headers del contenido
-$(OUTPUT_DIR)/handbook-full.md: $(SOURCES) $(METADATA) | $(OUTPUT_DIR)
+md: $(MD_DIR)/handbook.md
+
+# Genera MD autocontenido con imágenes
+$(MD_DIR)/handbook.md: $(SOURCES) $(METADATA) | $(MD_DIR) $(MD_DIR)/Figures
 	@printf '%s\n\n' "# Handbook of Synthi 100" > $@
 	@printf '%s\n\n' "**EMS (Electronic Music Studios)**" >> $@
 	@printf '%s\n\n' "---" >> $@
@@ -97,6 +123,14 @@ $(OUTPUT_DIR)/handbook-full.md: $(SOURCES) $(METADATA) | $(OUTPUT_DIR)
 		>> $@
 	@echo "✓ Markdown generado: $@"
 
+$(MD_DIR):
+	mkdir -p $(MD_DIR)
+
+$(MD_DIR)/Figures: $(CONTENT_DIR)/Figures
+	@mkdir -p $(MD_DIR)/Figures
+	@cp -r $(CONTENT_DIR)/Figures/* $(MD_DIR)/Figures/ 2>/dev/null || true
+	@echo "✓ Figuras copiadas a $(MD_DIR)/Figures/"
+
 # ============================================
 # Utilidades
 # ============================================
@@ -113,6 +147,7 @@ quick: | $(OUTPUT_DIR)
 		-o $(OUTPUT_DIR)/handbook.pdf
 
 clean:
-	rm -f $(OUTPUT_DIR)/handbook.pdf $(OUTPUT_DIR)/handbook.html $(OUTPUT_DIR)/handbook-full.md
+	rm -f $(OUTPUT_DIR)/handbook.pdf $(OUTPUT_DIR)/handbook.epub $(OUTPUT_DIR)/handbook.html
+	rm -rf $(OUTPUT_DIR)/handbook-md
 	rm -rf $(DOCS_DIR)
 	@echo "✓ Limpiado"

@@ -1,8 +1,18 @@
 # Handbook for Synthi 100
 
-Edición digital del manual **"Handbook for Synthi 100"** del antiguo Gabinete de Música Electroacústica de Cuenca, España.
+Edición digital y modernizada del manual **"Handbook for Synthi 100"** perteneciente al antiguo Gabinete de Música Electroacústica de Cuenca, España.
 
-Este proyecto forma parte del trabajo de investigación del grupo **Fuzzy Gab** de la Universidad de Castilla-La Mancha.
+Este proyecto forma parte del trabajo de investigación del grupo **Fuzzy Gab** de la Universidad de Castilla-La Mancha. Su objetivo es mejorar la accesibilidad al documento original, facilitando su uso en la investigación y educación.
+
+## Notas sobre la edición
+
+Esta edición no pretende ser un estudio crítico, sino una transcripción fiel y enriquecida para formatos modernos. Se han implementado las siguientes mejoras respecto al mecanografiado original:
+
+- **Formatos múltiples**: Disponible en PDF (maquetación profesional), Web (lectura online), EPUB (libros electrónicos) y Markdown (código fuente limpio).
+- **Navegación mejorada**: Referencias cruzadas activas entre figuras y secciones, así como índices de contenidos y figuras generados automáticamente.
+- **Formato moderno**: Los textos de advertencia y énfasis del original (mayúsculas/subrayados) se han adaptado a convenciones modernas como cuadros de texto coloreados (callouts) y cursivas, para no interrumpir el flujo de lectura.
+
+> **Nota**: Se ha procurado mantener la integridad del texto original tanto como ha sido posible. Para un análisis crítico exhaustivo (tachaduras exactas, caligrafía, etc.), se recomienda consultar los facsímiles originales.
 
 ## Sobre el Synthi 100
 
@@ -14,7 +24,6 @@ El Synthi 100 es un sintetizador analógico modular de EMS (Electronic Music Stu
 content/              # Proyecto Markdown autocontenido (fuente única)
   ├── metadata.yaml   # Metadatos del documento
   ├── Figures/        # Imágenes y figuras escaneadas
-  ├── 00-notas-edicion.md
   ├── 01-foreword.md
   ├── 02-section-1.md
   └── 03-section-2.md
@@ -99,3 +108,7 @@ Este trabajo es una transcripción con fines de investigación y educación. Con
 
 *Carlos Arturo Guerra Parra — Investigador en Fuzzy Gab*
 
+
+## Créditos
+
+**Edición y mantenimiento**: Carlos Arturo Guerra Parra (Investigador en Fuzzy Gab).

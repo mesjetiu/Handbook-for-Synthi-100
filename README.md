@@ -11,7 +11,7 @@ El Synthi 100 es un sintetizador analógico modular de EMS (Electronic Music Stu
 ## Estructura del proyecto
 
 ```
-content/              # Proyecto Markdown autocontenido
+content/              # Proyecto Markdown autocontenido (fuente única)
   ├── metadata.yaml   # Metadatos del documento
   ├── Figures/        # Imágenes y figuras escaneadas
   ├── 00-notas-edicion.md
@@ -22,11 +22,15 @@ content/              # Proyecto Markdown autocontenido
 build/                # Sistema de compilación
   ├── Makefile        # Makefile principal
   ├── build.sh        # Script alternativo
-  ├── templates/      # Plantilla LaTeX para Pandoc
+  ├── templates/      # Plantillas (LaTeX, CSS)
   └── filters/        # Filtros Lua para Pandoc
 
+docs/                 # Versión web (GitHub Pages) - versionado
+  └── index.html
+
 output/               # Artefactos generados (ignorado por git)
-  └── handbook.pdf
+  ├── handbook.pdf
+  └── handbook-full.md
 
 reference/            # Material de referencia
   └── Handbook for Synthi 100 (Cuenca).pdf
@@ -42,35 +46,39 @@ _legacy/              # Archivos LaTeX antiguos (solo consulta)
 
 ## Compilación
 
-El PDF se genera en `output/handbook.pdf`.
+### Targets disponibles:
 
-### Con Make (desde la raíz):
+| Comando | Output | Descripción |
+|---------|--------|-------------|
+| `make pdf` | `output/handbook.pdf` | PDF alta calidad (LaTeX) |
+| `make web` | `docs/index.html` | Sitio web (GitHub Pages) |
+| `make md` | `output/handbook-full.md` | Markdown limpio/compacto |
+| `make all` | Todo | Genera los tres formatos |
+| `make clean` | — | Limpia archivos generados |
+
+### Ejemplos:
 
 ```bash
-make pdf      # Genera output/handbook.pdf
-make quick    # PDF sin filtros (más rápido)
-make html     # Genera output/handbook.html
-make clean    # Limpia archivos generados
+make pdf      # Solo PDF
+make web      # Solo web (para GitHub Pages)
+make md       # Solo Markdown compacto
+make all      # Todo
 ```
 
-### Con el script:
+### Con el script (solo PDF):
 
 ```bash
 cd build && ./build.sh
 ```
 
-### Manualmente:
+## GitHub Pages
 
-```bash
-cd build
-pandoc ../content/metadata.yaml ../content/*.md \
-    --template=templates/handbook.latex \
-    --lua-filter=filters/divs.lua \
-    --resource-path=../content \
-    --pdf-engine=pdflatex \
-    --top-level-division=chapter \
-    -o ../output/handbook.pdf
-```
+La versión web se genera en `docs/` y está versionada. Para activar GitHub Pages:
+
+1. Ve a Settings → Pages en tu repositorio
+2. Source: "Deploy from a branch"
+3. Branch: `main`, folder: `/docs`
+4. El sitio estará en `https://usuario.github.io/Handbook-for-Synthi-100/`
 
 ## Formato
 

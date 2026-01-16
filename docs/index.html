@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="EMS (Electronic Music Studios)" />
+  <title>Handbook for Synthi 100</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="web.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Handbook for Synthi 100</h1>
+<p class="author">EMS (Electronic Music Studios)</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#notas-sobre-la-presente-edición"
+id="toc-notas-sobre-la-presente-edición">Notas sobre la presente
+edición</a></li>
+<li><a href="#foreword" id="toc-foreword">Foreword</a></li>
+<li><a
+href="#functional-principles-and-layout-first-switchon-brief-checks-inputoutput-connections"
+id="toc-functional-principles-and-layout-first-switchon-brief-checks-inputoutput-connections">Functional
+Principles and Layout, First Switch–On, Brief Checks, Input/Output
+Connections</a>
+<ul>
+<li><a href="#functional-principles-and-layout"
+id="toc-functional-principles-and-layout">Functional Principles and
+Layout</a></li>
+<li><a href="#first-switchon-and-brief-checks"
+id="toc-first-switchon-and-brief-checks">First Switch–on and Brief
+Checks</a></li>
+<li><a href="#inputoutput-connections"
+id="toc-inputoutput-connections">Input/Output Connections</a></li>
+</ul></li>
+<li><a href="#analog-signal-devices"
+id="toc-analog-signal-devices">Analog Signal Devices</a>
+<ul>
+<li><a href="#oscillators-1-12" id="toc-oscillators-1-12">Oscillators 1
+– 12</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 class="unnumbered" id="notas-sobre-la-presente-edición">Notas sobre
+la presente edición</h1>
+<p>Este documento es una edición en LaTeX del manual original
+perteneciente al antiguo Gabinete de Música Electroacústica de Cuenca,
+España, cuyos fondos están siendo objeto de estudio por parte del grupo
+de investigación Fuzzy Gab de la Universidad de Castilla-La Mancha. Esta
+edición se ha desarrollado con el objetivo de mejorar la accesibilidad
+al documento mecanografiado original, facilitando así su uso en la
+investigación y la educación.</p>
+<p>Se han implementado varias características de utilidad en esta
+edición: se han añadido referencias cruzadas entre figuras, secciones y
+otros elementos esenciales para una navegación eficiente y una mejor
+comprensión del contenido. Asimismo, se ha introducido un índice de
+figuras y un índice de contenidos generado automáticamente,
+enriqueciendo la estructura organizativa del manual que no estaba
+presente en el original.</p>
+<p>Una característica de utilidad de esta edición es que los textos, ya
+sean escritos a mano o mecanografiados que aparecen dentro de las
+figuras escaneadas, son buscables en el PDF. Esto facilita enormemente
+la consulta y el estudio detallado del material. Se han tomado ciertas
+decisiones importantes de formato al pasar de un texto mecanografiado a
+un formato propio de un procesador de textos moderno. Así, los textos de
+advertencia del documento original, que a menudo aparecen en mayúsculas
+y subrayados, se han reformateado en cuadros de texto coloreados para
+destacarlos adecuadamente sin interrumpir el flujo del contenido
+principal. El uso de mayúsculas en ciertos términos o frases con una
+clara intención de énfasis se han implementado aquí con cursivas.</p>
+<p>Es importante mencionar que esta edición no pretende ser un estudio
+crítico del manual original. Se ha procurado mantener la integridad del
+texto tanto como ha sido posible; sin embargo, para un análisis
+exhaustivo, se recomienda acceder a los documentos originales. Se busca
+que este trabajo sea una herramienta útil y práctica para quienes
+estudian o tienen interés en el Synthi 100.</p>
+<hr />
+<div class="signature">
+<p>Carlos Arturo Guerra Parra<br />
+Investigador en Fuzzy Gab</p>
+</div>
+<h1 class="unnumbered" id="foreword">Foreword</h1>
+<p>Synthi 100 is only made in very small quantities, and because every
+aspect of its design is under constant review with an eye to
+improvement, each example of the machine is slightly different. This
+makes it impracticable to produce a definitive, once-for-all handbook,
+and for some time there has been no handbook at all, since we are aware
+that purchasers of this instrument are in the main already experienced
+in the use of voltage controlled equipment and the general techniques of
+electronic music, and in most cases will have had extensive
+demonstrations before taking delivery. At the same time we have been
+conscious that some users have simply not grasped the possibilities at
+their command and have seriously under-rated and underused the
+capabilities which S.100 offers, partly because there is no other
+synthesizer with which to compare it. Apart from possessing a number of
+devices unique to EMS, the digital sequencer gives S.100 a degree of
+user control which can only be rivalled by fully computerised studios at
+many times the cost.</p>
+<p>Because of the almost limitless possibilities of the studio, it is
+not easy to attempt a survey of its capabilities, and the following
+pages should be regarded as an “intelligent user’s guide”. We expect
+each owner to add his own notes and comments, individual calibrations of
+particular interest, etc. To take a particular example, the eight
+voltage controlled filters have always been built to an exacting
+specification, but because our research and development department
+considered there was room for improvement the circuitry has been
+slightly modified almost with each example manufactured. The settings
+and procedures given in this book may therefore not precisely apply to a
+given machine, but the method of taking response curves etc., is still
+valid and useful in all cases.</p>
+<p>If in doubt about a particular device, look it up in the contents
+list and read the typical uses given, but regard this as a starting
+point rather than a complete survey of possibilities; the great strength
+of voltage control lies in the enormous variety of inter-dependencies
+available, and in S.100 these are so numerous that no handbook can begin
+to cover them.</p>
+<p>We have divided the descriptions of the devices into groups of
+similar general purpose, such as Source or Treatment, Digital or
+Analogue, but some devices have several applications and therefore
+appear in more than one section.</p>
+<p>If you consider that the presentation or contents of this handbook
+are not satisfactory, we would be pleased to know about this, and the
+purpose of the loose leaf method of binding is to make it possible to
+amend and add material easily. No doubt you will also wish to exchange
+views and ideas with other S.100 owners, and to this end we include a
+list of purchasers up to the time of issue of this copy - though we
+cannot of course guarantee that some of these machines have not changed
+hands.</p>
+<div class="warning" title="VERY IMPORTANT">
+<p>In earlier S.100 design, patch pins of 2K7 or shorting pins were
+often used. The patching system now employs virtual-earth summing nodes
+and 100K (white) pins are standard. A shorting pin is
+<strong>never</strong> used, since this would connect a high-current
+source directly to the summing node. Apart from gross distortion, damage
+may result to the input. Red (2K7) pins are used only for oscilloscope
+patching.</p>
+</div>
+<h1
+id="functional-principles-and-layout-first-switchon-brief-checks-inputoutput-connections">Functional
+Principles and Layout, First Switch–On, Brief Checks, Input/Output
+Connections</h1>
+<h2 id="functional-principles-and-layout">Functional Principles and
+Layout</h2>
+<p>The designer of a synthesizer can go about his work in two quite
+different ways. He can aim to make the instrument reasonably easy to use
+by reducing the number of decisions to be made by the user. This means
+fitting switches or permanent connections between various components in
+order to reduce the size of the patch (interconnection field with a
+large number of choices — like a telephone exchange) which the operator
+has to control for himself. The trouble is that the fixed decisions
+reflect what the designer would like, but not necessarily what you would
+like. Alternatively, he can design a ‘no compromise’ instrument in which
+every decision has to be made by the user and a virtually limitless
+number of configurations are possible. Such machines are not
+particularly easy to use well, and the larger the machine the more
+difficult it becomes, but we make no apology for following this second
+course when we designed the S.100. On the other hand, after first making
+it difficult, we added a powerful assistant in the shape of the
+<em>Digital Sequencer</em>, which is the most helpful aid to the
+synthesizer user ever invented. All the same there are 7,200 individual
+patch points in the S.100 (though we admit that not quite all of them
+are effectively operational), and thought and experience must be
+combined if really good work is to result (and the capability is there
+for such work).</p>
+<p>For this reason we strongly recommend any potential user of S.100 to
+spend a lot of time ‘training’ on a small synthesizer such as our VCS3,
+Synthi A or AKS, so that the methods of using matrix board patching, the
+use of control voltages etc. — in fact all the basic groundwork of EMS
+voltage controlled studios, is thoroughly mastered before attempting to
+use the S.100. In this handbook, therefore, it will be assumed that the
+reader is already familiar with the operation of the smaller
+machines.</p>
+<p>Because the possibilities are so large, any attempt to provide lists
+of suitable patches, etc., would be fruitless. We shall explain exactly
+what each device does, and offer typical examples of its use, but after
+that it is up to your own musical imagination and your increasing
+experience with S.100 to build the sounds you think of.</p>
+<p>Don’t be timid about using the resources of the machine — or imagine
+that there is only one way to go about solving a problem. For example,
+it is easy to settle for only one or two ways of creating a timbre. In
+fact, even without combining several techniques (which can easily be
+done) there are at least eight different methods:</p>
+<ol type="1">
+<li>Addition of shaped waveforms from one source</li>
+<li>Additive timbres from a number of oscillators locked by
+synchronising inputs and tuned to desired partials</li>
+<li>Subtractive timbre derivation by manually controlled filters
+(8–octave filter bank for formants, output filter on each channel)</li>
+<li>Subtractive timbre derivation by using dynamic voltage controlled
+filters (of which there are eight)</li>
+<li>Using the filters themselves as sources, in oscillatory mode, with
+or without inputs as well</li>
+<li>Multiplicative timbre derivation by ring modulation, either with
+several oscillators (synchronised or not) or one source with frequency
+doubling and/or halving configurations (S.100 has three ring modulators,
+which may be cascaded or paralleled in many different ways)</li>
+<li>Other modulation techniques (a.m. and/or f.m.) by multiple control
+of filters and oscillators</li>
+<li>Digital loops in the sequencer, by which controllable discrete
+phenomena are speeded up many hundreds of times by increasing clock rate
+so that they become audio frequency phenomena.</li>
+</ol>
+<p>Any of these basic approaches can be further modified by
+e.g. reverberation (itself voltage controllable) or numerous control
+influences, some periodic, some asynchronous and some random. Or of
+course several techniques can be combined to produce timbre changes of
+great subtlety — and we haven’t even considered any of the ways of
+incorporating a noise content into the timbre.</p>
+<p>This is not an acoustics or musical textbook, so (as with practice on
+a small synthesizer) we must assume some previous knowledge of the
+nature of sound and how to manipulate it. Mental analysis of the
+contents of the mind’s ear into likely configurations of actual devices
+comes with practice. Some will find block diagrams useful before
+translating these into a practical patch. Others will find it easier to
+work onto patch dope sheets (you will find a supply of these at Section
+8). Others again may incorporate dope sheets into various forms of
+notation, or work straight on to the machine from an idea.</p>
+<p>The above timbre example — a small fraction of a larger problem — was
+intended to encourage rather than daunt, in the sense that there are
+riches to be found if you take the trouble to find them.</p>
+<p>The guiding principles behind the design of the S.100 were (1) to
+make a synthesizer in which there would be no compromise to versatility;
+(2) to extend and enhance the control principles already proved highly
+successful in our small synthesizers — i.e. matrix patching, bi–polar
+control voltages, direct coupled circuits which can be used both in
+sub–audio and audio roles; (3) to include more of everything found in
+the small synthesizers, but also greatly enhance the specifications of
+such devices as the Envelope Shaper, include many extra devices such as
+High Pass–to–Resonating Filters (as well as Low Pass), Envelope
+Followers, Slew Limiters, Pitch–to–Voltage Converter and Eight Octave
+Filter Bank; (4) to put the whole of this elaborate network of analogue
+controls under the command of a digital sequencer, giving an accuracy of
+performance hitherto undreamed of in analogue synthesizers.</p>
+<p>Having decided upon the array of devices we would need, we were faced
+with nearly 120 inputs and the same number of outputs. Apart from the
+very high cost of a matrix board this size, it would have been extremely
+unwieldy, so instead of splitting one board into Signals and Controls
+(as in VCS3, Synthi A series), we specified two boards of 60 x 60, a
+Signal Board and a Control Board (left and right respectively). There
+were some difficult decisions — borderline cases where a device (e.g. an
+oscillator) may be a signal or a control. But provision is made for
+cross–patching, and it is also possible to use jumper leads from patch
+to patch. The input Amplifiers and Output Channels come up on both
+boards, and the first four Output Channel inputs appear on the Control
+Board as well as the Signal Board. Before going any further, and it is
+not necessary to understand all the devices at this stage, study the
+boards carefully, and identify all outputs to the patch (horizontal
+rows) with their appropriate panel controls. Find also the equivalent
+vertical columns referring to signal inputs (where applicable). The
+columns on the Control Board do not have any panel controls, because our
+design policy is to equip all outputs with level controls, and vary
+input levels from the controlling device. In cases where you wish to
+feed the same control to different devices at different levels, a
+selection of different pin resistances can be used (three are supplied
+as standard, and you can add more yourself).</p>
+<p>In Section 2 and 3 you will find all the analogue signal and control
+devices described, with suggestions for learning their use. Beginning
+with simple patches, you can build up elaborate configurations in which
+many parameters are being dynamically controlled.</p>
+<p>You may be puzzled to find that three devices — the Pitch–to–Voltage
+Converter and the 2 Envelope Followers, have inputs on the Signal Board
+and Outputs on the Control Board. This is because they are
+signal–to–control converters, and one of their main functions is in real
+time transformations of live instrumental inputs. They are described in
+Section 5.</p>
+<p>Functionally, the sequencer is the most elaborate device in S.100,
+and it is a very powerful control instrument. The programming of
+analogue control is a matter of delicate adjustment, as you will know
+from your experience of small synthesizers. On S.100 you may easily have
+over 100 pins contributing to a patch, and to control all this with
+accuracy from the two keyboards, the two joysticks, or from the
+attack–dependent envelope shaper trapezoids or the various free running
+controls such as the slow oscillators (10, 11, 12) or the random
+generator, can be a difficult matter when a number of voltages have to
+change from event to event, or dynamically during them. The sequencer is
+digital, and operates by storing precise numbers which are converted
+into equally precise voltages to control to the devices. As you put data
+into the memory you also hear what you are playing, and on play back you
+hear it again exactly the same. When adding new voices you can continue
+to hear any sound previously recorded, and three completely different
+sets of voltages can be stored, controlling (if you like) quite
+different types of sound. If you don’t want to ‘play’ your sequence in
+real time, you don’t have to — you can put in data as slowly and
+carefully as you like. Mistakes can be singled out and removed or
+replaced without the least disturbance to any wanted event. Short of
+full scale computer control (and this is also possible, of course),
+there is no method of storing voltages which is so accurate and
+flexible. It makes the S.100, in spite of its huge possibilities of
+sound production and control, a reasonably docile creature to
+handle.</p>
+<p>The sequencer operating controls are all at the right hand end of the
+machine — some on the vertical panel and some below, just above the
+output channels. The functions of all these controls are described in
+Section 4, and in Section 6 we describe some more elaborate ways of
+using the sequencer.</p>
+<p>The design of the S.100 does, we believe, allow for any method of
+work the composer wishes to use. It can be ‘played’ in real time or
+programmed slowly and carefully. It can be randomly or accurately
+controlled (or anything in between). Different types of sound can be set
+up at leisure one after the other but produced simultaneously. The
+devices include a very full capability for transforming live
+instruments, and the ideal studio location is near a performing area so
+that signals can be processed and sent back to the hall.</p>
+<h2 id="first-switchon-and-brief-checks">First Switch–on and Brief
+Checks</h2>
+<p>The S.100 will have been lined up, and is normally installed, by EMS
+engineers, and no attempt should be made to alter presets or make other
+internal adjustments on a new machine without specific instructions from
+a qualified installer. But the following points may be useful if for any
+reason you have to install it yourself, or take over a used machine.</p>
+<ol type="1">
+<li>Be quite sure, if the machine has not come direct from us, that the
+mains supply is correct for the machine. If your supply is 240V, and
+there is any doubt at all, first obtain a 1KVA 240–110V step–down
+transformer and run the machine through it. If the machine is already
+set for 240V the meter and panel lights will be very dim, and the
+sequencer clock display will not light up. If everything runs normally,
+you can continue to run the machine through the transformer, but if you
+prefer to convert it to 240V, all the power supplies must be changed,
+viz:
+<ol type="1">
+<li>The power supplies for the S.100 (See technical manual for
+details)</li>
+<li>The mains adjustment for the oscilloscope as fitted.</li>
+</ol></li>
+</ol>
+<div class="note">
+<p>The S.100 is not suitable for DC or battery operation.</p>
+</div>
+<ol start="2" type="1">
+<li>The stand is normally on castors (though various special stands can
+be supplied), so the S.100 can be swung out for rear access. Where space
+considerations make this difficult it may be more convenient to mount it
+through a partition, giving access from behind, or in some studios it
+can be free–standing. Ventilation space must be provided above, as the
+sequencer and the scope both need to dissipate a certain amount of heat.
+Since one rarely sits at the S.100, some users prefer to raise the whole
+instrument higher to make it more convenient for standing operation.
+This also gives clearance to enable the keyboard to be stowed underneath
+when not in use.</li>
+<li>After switching on, make the following checks:
+<ol type="1">
+<li>Meter dial lamps on (no switch)</li>
+<li>Illuminated panel lights (switch near mains switch)</li>
+<li>Digital display (Sequencer Event Time). This will come on initially
+at any number. Pressing CLEAR/RESET or RESET buttons should bring it to
+zero, where it will stay. It will not run unless patched, so expect no
+result if you press START.</li>
+<li>Envelope Shaper ‘ON’ lamps. Switch all three shapers to ‘Free Run’;
+DELAY and ON to 0, ATTACK and DELAY about half way. The lamps should
+flash on and off.</li>
+<li>Scope and Frequency Meter. The digital display on the frequency
+meter should be at zero (except certain types which may be in a
+time–counting mode). The scope should show two traces (if time base on
+and tube controls correct).</li>
+<li>You can also check all source devices on the scope, but may prefer
+to do this audibly. A scope check of all oscillators, noise generators
+and filters (response controls to maximum to put them into oscillation),
+will, however, familiarise you with patch and panel locations, and scope
+controls.</li>
+</ol></li>
+</ol>
+<p>All these simple checks can be done without connecting an output, but
+temporary listening arrangements are easily made by connecting stereo
+phones to Pan Outputs 1–4 Left, and 5–8 Left. Put all Pan controls to
+Left. You can now listen to any output channel, but naturally in order
+to use the S.100 you must make proper input/output arrangements.</p>
+<h2 id="inputoutput-connections">Input/Output Connections</h2>
+<p>Look at the back of the lower panel. There is a trough with an access
+tunnel at each end of the machine, and all leads can be brought in from
+the rear and concealed neatly in this trough. From left to right you
+will find:</p>
+<ul>
+<li>4 Pan Outputs</li>
+<li>8 Individual Outputs</li>
+<li>4 External Treatment Sends</li>
+<li>4 External Treatment Returns</li>
+<li>8 Input Amplifiers (sometimes but not always there are ten sockets,
+Chs. 1 and 2 having extra sockets for MIC. amps).</li>
+<li>2 Option sockets</li>
+<li>2 71–way connectors (one male, one female) to which the whole
+Control Board is wired. 60 ways on each are used, leaving some spare
+ways which can be used for other purposes</li>
+<li>1 Keyboard socket</li>
+<li>1 Panel Light switch</li>
+<li>1 Mains Keyswitch (key removable when ON as well as OFF), with main
+fuse and mains input socket beside it.</li>
+</ul>
+<h3 id="output-channels">Output Channels</h3>
+<figure id="fig:figure_1_output_channels">
+<img src="Figures/figure_1_output_channels.png"
+alt="Simplified diagram of output channels" />
+<figcaption aria-hidden="true">Simplified diagram of output
+channels</figcaption>
+</figure>
+<p>The figure above shows the output arrangements, from which you will
+see that the Pans are in two separate groups, and can be taken to four
+outputs if desired. The limitations are that you cannot cross–pan from
+Outputs 1–4 to Outputs 5–8 or vice versa. The pan outputs are very
+useful when you have only a limited number of monitor amplifiers and
+speakers available. If necessary you can hear all 8 channels on two
+output monitors (same as stereo phones connection mentioned above). With
+four amplifiers use all four pan outputs. When a full studio mixer is
+available, complete with its own panning arrangements, it is best to use
+the individual channel outputs, and this applies also when using
+multi–track tape recorders unless panning direct from S.100 to a tape
+recorder. The socket connections are identical on all 12 outputs, and
+you can change quickly from one type to the other. The following figure
+shows the pin connections for all input and output plugs and sockets,
+which are balanced lines. Signal levels should be within the range 0–16
+dBM. When feeding to an unbalanced source, use earth as pin 1, Signal to
+pin 3. Pin 2 is left open circuit. (Do not earth). When feeding to the
+S.100 from unbalanced, separately earthed equipment, connect signal
+earth to pin 2, signal high to pin 3. (This will avoid hum loops).</p>
+<figure id="fig:figure_2_plugs_sockets_cannon">
+<img src="Figures/figure_2_plugs_sockets_cannon.png"
+alt="Plugs + sockets (cannon). NB: Some models have jack socket inputs + outputs" />
+<figcaption aria-hidden="true">Plugs + sockets (cannon). NB: Some models
+have jack socket inputs + outputs</figcaption>
+</figure>
+<h3 id="treatment-sends-and-returns">Treatment Sends and Returns</h3>
+<p>These are general purpose output and input lines which come up on the
+Signal Board, and are very useful for interfacing with other studio
+equipment, such as extra filters, reverberation plates, other
+synthesizers. They can also be used as extra output or input lines. They
+are individually wired (i.e. there is no special relationship between
+Send 1 and Return 1), and are fitted with level controls (5K) on the
+panel. No amplifiers are built in to this facility, but of course an
+output amplifier can precede a Treatment Send. If extra gain is needed
+for a Return, one of the Input Amplifiers should be used instead.</p>
+<h3 id="input-amplifiers">Input Amplifiers</h3>
+<p>These eight sockets (ten if special microphone amplifier inputs are
+provided) feed eight identical input amplifiers. They are of line
+sensitivity (0–16 dBu) or 10VDC Max. for 0.1% THD) and their direct
+coupling makes them suitable for signals or controls. Low output
+microphones need external amplifiers, and in some models Inputs 1 and 2
+have special additional microphone sockets with provision for powering
+these preamplifiers (which are also supplied in these cases).</p>
+<p>Inputs can be from a mixer, from other electronic music equipment,
+from tape recorders, electric instruments, radio, phonograph etc. In
+some studios it would be most convenient to take all the output, send
+and return, and input lines to a main studio patch for distribution.</p>
+<h3 id="option-sockets">Option Sockets</h3>
+<p>These two 8–way sockets are not wired, and are included (like the
+Option knob at the right of the right hand panel) for the convenience of
+the user. In any studio there must be room for expansion, and although
+these sockets may never be used it was felt desirable to include some
+provision for extra facilities. One obvious use would be to plug in a
+button box for remote control of tape recorders.</p>
+<h3 id="control-board-connectors">Control Board Connectors</h3>
+<p>This plug and socket enable the entire control board to be operated
+from a remote point. If the S.100 is interfaced with a computer, or its
+control patch made part of an even larger patch, this facility makes it
+easy to do. It can, of course, be partly used, in the sense that there
+might be selected controls you wish to operate remotely (e.g. envelope
+or sequencer key inputs). There are also a number of unused ways on
+these plugs, so extra connections can be made.</p>
+<h3 id="keyboard-socket">Keyboard Socket</h3>
+<p>To plug in the double 5–octave dynamically proportional keyboard
+provided.</p>
+<h3 id="panel-light-and-mains-input">Panel Light and Mains Input</h3>
+<p>The lights under the overhang give working illumination to the lower
+panels. The mains keyswitch, note, can be removed when the machine is on
+as well as off. This is valuable when a sequence has been recorded and
+work interrupted, in case the S.100 is accidentally switched off.</p>
+<h3 id="peripherals">Peripherals</h3>
+<p>Apart from the equipment already suggested — i.e. studio patch,
+general purpose mixer, tape recorders, monitor amplifiers and speakers —
+nothing more is essential to operate the S.100 efficiently. Two
+excellent measuring devices — a double beam oscilloscope and a frequency
+meter — are incorporated in the machine itself. A digital voltmeter is a
+useful accessory in certain kinds of work where it is essential to
+monitor very accurately the voltages being sent to the sequencer or
+supplied to devices, and is supplied as an in–built facility on certain
+later models. A reverberation plate is a useful refinement, and this can
+be connected through the Treatment Sends and Returns. Any studio
+acquires extra equipment for which there is ample provision in the
+input/output arrangements of S.100. Many special circumstances can
+occur, and any competent studio manager will devise suitable methods of
+control. A single example will show what we mean: The sequencer has a
+special Key output (Key H — see Section 6), and it might be a
+requirement to make this key operate (a) a remote attack in another
+synthesizer, (b) an electronic stepping device so that successive keys
+perform different functions, (c) a mechanical relay to e.g. start a tape
+recorder. All these things can be done — it is a matter of devising the
+relatively simple peripheral arrangements you need.</p>
+<p>The following two Sections deal respectively with the analogue signal
+device (sources and treatments) and the analogue control devices. In
+fact you will have to refer across from one description to another
+fairly frequently, because it is a practical impossibility to treat each
+device in isolation.</p>
+<h1 id="analog-signal-devices">Analog Signal Devices</h1>
+<p><strong>Signal Source</strong></p>
+<ul>
+<li>Audio Oscillators</li>
+<li>Sub-audio Oscillators (1)</li>
+<li>Input Amplifiers</li>
+<li>White Noise Generators</li>
+</ul>
+<p>Of the twelve oscillators in the S.100 (apart from the eight
+Filter/Oscillators), nine are intended largely as audio sources, and
+three as control sources. But since all outputs are directly coupled
+(able to pass DC) these roles can be reversed, and it is largely a
+matter of the frequencies required. Simply switch to high/low range as
+required. The nine ‘audio’ oscillators divide into two types, but all
+have the same frequency range. All have a control voltage slope of 1V
+per octave. All can be locked by synchronising inputs, which ensures
+perfect tracking of unisons, octaves, fifths or any other simple ratio
+partial.</p>
+<h2 id="oscillators-1-12">Oscillators 1 – 12</h2>
+<p><strong>Output 1</strong>: Sine + Sawtooth (with sine ShapeControl to
+give variable amounts of even harmonic distortion)</p>
+<p><strong>Output 2</strong>: Sawtooth Ramp + Pulse, with Pulse
+mark–sweep variable.</p>
+<p>These 12 identical oscillators have two in-phase outputs with shapes
+and phase relationship as shown in the figure below. Find these outputs
+on the Signal Board and the control inputs on the Control Board.</p>
+<figure id="fig:figure_3_shape_control">
+<img src="Figures/figure_3_shape_control.png"
+alt="Shape Control and Effect on Output Signals" />
+<figcaption aria-hidden="true">Shape Control and Effect on Output
+Signals</figcaption>
+</figure>
+<p>With the small synthesizers, the amount of timbre control possible
+without using filters is limited by the fact that two oscillators can
+never be tuned so that they are locked in phase, and beats will always
+occur. Try now putting Oscs. 1 and 2 sines to output, and Osc. 1 ramp to
+synch. input 2. For the moment keep Osc. 1 ramp level at zero, and tune
+the two oscillators an octave apart, Osc. 2 being the higher. Monitor
+both on <span class="math inline"><em>Y</em><sub>1</sub></span> (two
+pins); however carefully you tune, the picture will slowly drift as the
+relative phase changes, and slow beats will occur. Now bring up the ramp
+output of Osc. 1; at a certain point the waveform (and the sound) will
+lock, and there will be the illusion of one sound source instead of two
+(particularly if Osc. 2 sine level is set somewhat lower than Osc. 1, to
+simulate a ‘natural’ second harmonic). This facility enables timbres to
+be constructed additively, by adding sines to build the desired harmonic
+structure. There is no reason why you cannot use ramps as well, but the
+harmonic structure is more difficult to predict (but see below).</p>
+<p>The main thing to remember when using synch. inputs is that they
+cannot lock unless they are near to a simple frequency ratio (2:1 in the
+above example, but 1:1, 3:1, 8:1 etc). If you are way off tune the
+oscillator being controlled will give an unstable output. Try this by
+moving Osc. 2 frequency slowly. As soon as it is far enough off for Osc.
+1 to be unable to lock the octave, it will switch rapidly from one
+frequency to another (a complicated function of both the frequency and
+amplitude of the synch. input). As soon as it finds the next simple
+ratio it will lock again (the fourth below the octave or the fifth
+above, etc). So you can synchronise a whole harmonic series, within
+reason.</p>
+<p>For a more complete study, tune all six oscillators as follows:
+<em>first put in control pins</em> from some suitable control source.
+Unless you do this before tuning you will have to do it all again. For
+this experiment take a joystick output, which will enable us to track
+our constructed timbre through several octaves (a static timbre at this
+stage, of course, with no internal variations or envelope). Put white
+(100K) pins at C11+26, 27, 28, 29, 30, 31. Set lefthand joystick (q.v.)
+vertical range control to give about 3–4 octaves when the stick is moved
+up and down, and leave stick towards the low pitch end (towards you).
+Tune Osc. 1 to a low note, put all six sines to one output, and insert a
+synch. pin from Osc. 1 ramp to Osc. 2 synch. input. Follow the series
+shown in Fig. 4(a) — i.e., tune Osc. 2 to the octave above, setting the
+frequency control in the centre of ‘locked’ area, and the ramp output at
+or near maximum. Continue to put in synch. pins after tuning each
+oscillator as near as possible to successive harmonics, then check them.
+Tune slave oscillators on low side if anything, as synchronisation tends
+to raise frequency.</p>
+<p>When you get to Oscs. 5 and 6, you may choose various configurations
+from harmonics 5–10 or higher (or you can miss out one or two of the
+lower harmonics and use more higher ones). Locking the higher harmonics
+becomes more difficult as they are much closer together and the ratios
+larger. Now adjust sine levels so that the fundamental is loudest and
+progressively reduce the level of each harmonic (this for a start — you
+can alter the timbre a great deal by changing internal amplitudes). Try
+moving the joystick. Some of the oscillators may go out of lock at some
+point. Readjust for best holding. It is asking a great deal to expect
+synchronisation of, say, the 7th harmonic for five octaves or more, but
+it should be possible over at least four octaves. It is also worth
+trying different synch. pin arrangements. For example, State 2 on
+Specimen Patch 1 locks Oscs. 2 and 3 from 1, but 4 and 5 from 2 (the
+octave of 1), and 6 from 4 (the double octave). This may work better,
+but you have to try different arrangements. Sometimes a double–locked
+arrangement is best, with mutual synch. pins between oscillators. Note
+that the synch. input is driven from output you are not using for signal
+— otherwise you could not reduce the signal level for the sound you want
+without losing the synch. input level.</p>
+<p>Look at Fig. 4(b). This shows an alternative timbre structure using a
+sawtooth output on the second harmonic (change synch. also if you are
+using State 2). The waveform itself now contributes to the timbre
+(coming up on even harmonics of the fundamental), and the sound will be
+richer, but buzzy at the top. Remove some of the upper harmonics by
+putting the whole complex through the Eight Octave Filter Bank (q.v.).
+Set all the lower controls of the Filter Bank at No. 10, and slope off
+to 0 at the highest octave.</p>
+<p>This method of timbre construction can give extremely rich organ-like
+tones, and you can experiment with emphasising certain harmonics. You
+can also, of course, try different series altogether, but you will not
+achieve lock unless the relationships are fairly simple.</p>
+</body>
+</html>

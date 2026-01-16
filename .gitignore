@@ -26,6 +26,9 @@ output/
 # PDFs de referencia se mantienen
 !reference/*.pdf
 
+# docs/ SÍ se versiona (GitHub Pages)
+# NO añadir docs/ aquí
+
 # Archivos temporales
 *.bak
 *~

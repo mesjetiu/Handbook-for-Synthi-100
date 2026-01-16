@@ -11,16 +11,27 @@ El Synthi 100 es un sintetizador analógico modular de EMS (Electronic Music Stu
 ## Estructura del proyecto
 
 ```
-content/           # Archivos Markdown (fuente principal)
-  ├── metadata.yaml
+content/              # Proyecto Markdown autocontenido
+  ├── metadata.yaml   # Metadatos del documento
+  ├── Figures/        # Imágenes y figuras escaneadas
   ├── 00-notas-edicion.md
   ├── 01-foreword.md
   ├── 02-section-1.md
   └── 03-section-2.md
-templates/         # Plantilla LaTeX para Pandoc
-filters/           # Filtros Lua para Pandoc
-Figures/           # Imágenes y figuras escaneadas
-TeX_files/         # Archivos LaTeX originales (legacy)
+
+build/                # Sistema de compilación
+  ├── Makefile        # Makefile principal
+  ├── build.sh        # Script alternativo
+  ├── templates/      # Plantilla LaTeX para Pandoc
+  └── filters/        # Filtros Lua para Pandoc
+
+output/               # Artefactos generados (ignorado por git)
+  └── handbook.pdf
+
+reference/            # Material de referencia
+  └── Handbook for Synthi 100 (Cuenca).pdf
+
+_legacy/              # Archivos LaTeX antiguos (solo consulta)
 ```
 
 ## Requisitos
@@ -31,30 +42,34 @@ TeX_files/         # Archivos LaTeX originales (legacy)
 
 ## Compilación
 
+El PDF se genera en `output/handbook.pdf`.
+
+### Con Make (desde la raíz):
+
+```bash
+make pdf      # Genera output/handbook.pdf
+make quick    # PDF sin filtros (más rápido)
+make html     # Genera output/handbook.html
+make clean    # Limpia archivos generados
+```
+
 ### Con el script:
 
 ```bash
-./build.sh
-```
-
-### Con Make:
-
-```bash
-make pdf      # Genera handbook.pdf
-make quick    # PDF sin filtros (más rápido)
-make html     # Genera handbook.html
-make clean    # Limpia archivos auxiliares
+cd build && ./build.sh
 ```
 
 ### Manualmente:
 
 ```bash
-pandoc content/metadata.yaml content/*.md \
+cd build
+pandoc ../content/metadata.yaml ../content/*.md \
     --template=templates/handbook.latex \
     --lua-filter=filters/divs.lua \
+    --resource-path=../content \
     --pdf-engine=pdflatex \
     --top-level-division=chapter \
-    -o handbook.pdf
+    -o ../output/handbook.pdf
 ```
 
 ## Formato

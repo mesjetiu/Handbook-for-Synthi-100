@@ -20,11 +20,11 @@
 *.bcf
 *.run.xml
 
-# Builds generados
-*.pdf
-*.html
-*.epub
-*.docx
+# Directorio de salida (builds generados)
+output/
+
+# PDFs de referencia se mantienen
+!reference/*.pdf
 
 # Archivos temporales
 *.bak

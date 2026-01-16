@@ -1,45 +1,16 @@
-# Makefile para generar PDF del Handbook of Synthi 100
-# Uso: make pdf
+# Makefile wrapper - delega al Makefile principal en build/
+# Uso: make pdf, make clean, make html, make quick
 
-CONTENT_DIR = content
-TEMPLATE = templates/handbook.latex
-FILTER = filters/divs.lua
-OUTPUT = handbook.pdf
+.PHONY: pdf clean html quick
 
-# Ordenar archivos por nombre (prefijo numérico)
-SOURCES = $(sort $(wildcard $(CONTENT_DIR)/*.md))
-METADATA = $(CONTENT_DIR)/metadata.yaml
+pdf:
+	@$(MAKE) -C build pdf
 
-.PHONY: pdf clean
-
-pdf: $(OUTPUT)
-
-$(OUTPUT): $(SOURCES) $(METADATA) $(TEMPLATE) $(FILTER)
-	pandoc $(METADATA) $(SOURCES) \
-		--template=$(TEMPLATE) \
-		--lua-filter=$(FILTER) \
-		--resource-path=content \
-		--pdf-engine=pdflatex \
-		--top-level-division=chapter \
-		-o $@
-	@echo "✓ Generado: $@"
-
-# Vista previa rápida sin filtros (más rápido)
 quick:
-	pandoc $(METADATA) $(SOURCES) \
-		--template=$(TEMPLATE) \
-		--resource-path=content \
-		--pdf-engine=pdflatex \
-		--top-level-division=chapter \
-		-o $(OUTPUT)
+	@$(MAKE) -C build quick
 
-# Generar HTML (para pruebas)
 html:
-	pandoc $(METADATA) $(SOURCES) \
-		--lua-filter=$(FILTER) \
-		--resource-path=content \
-		--standalone \
-		-o handbook.html
+	@$(MAKE) -C build html
 
 clean:
-	rm -f $(OUTPUT) handbook.html *.aux *.log *.out *.toc *.lof
+	@$(MAKE) -C build clean

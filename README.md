@@ -18,6 +18,10 @@ Esta edición no pretende ser un estudio crítico, sino una transcripción fiel 
 
 El Synthi 100 es un sintetizador analógico modular de EMS (Electronic Music Studios), con secuenciador digital, matriz de patcheo de 7.200 puntos y 12 osciladores.
 
+## 📖 Consulta el handbook en línea
+
+**[Handbook for Synthi 100 - Web versión](https://mesjetiu.github.io/Handbook-for-Synthi-100/)**
+
 ## Estructura del proyecto
 
 ```
